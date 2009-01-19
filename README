@@ -1,0 +1,43 @@
+= Simple Web Shop
+
+Created by: Patrick Aebischer (patrick.aebischer AT maqsis DOT ch), January 2009
+
+This extension allows you to create a simple tiny web shop. It's basically
+a form where where you can choose the products / quantity you are interested
+in and enter the delivery address. There is no payment or anything involved.
+
+It might be useful for small companies selling just some (let's say up to
+5 or 10) products and want to have a more or less intelligent form where
+clients could post an order. The order is then send as an email to the
+shop owner.
+
+Via the admin interface you can add new products, change prices or view
+placed orders. 
+
+
+== Usage
+
+The products are managed via the admin interface where you can add new
+products, change prices and view placed orders.
+
+There are no config options via the admin interface nor are there any
+radiant tags involved. If you want to change the layout or anything
+you need to touch the files from the extension.
+
+
+== Integration into Radiant
+
+The shop uses the url /shop. To render the correct layout you need to
+create this page in the admin interface. You must the include the
+tag <shoptag> where the shop elements should be placed. 
+
+The second page you need to create is /danke. After an order has been
+placed this redirect will take place.
+
+
+== Limitations
+
+This extension is not very customizable via Radiant. All has to be
+done in the code of the extension. 
+
+
