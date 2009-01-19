@@ -1,0 +1,36 @@
+
+<% include_stylesheet 'admin/simple_web_shop' %>
+
+  <h1>Order</h1>
+
+
+    <div class="form-area">
+      <div  id="link_form_area">
+        <table>
+          <tr>
+            <td> <b>Datum</b> </td>
+            <td>
+              <%= @item.created_at.strftime('%d.%m.%Y') %> <br/>
+            </td>
+          </tr>
+          <tr>
+            <td> <b>Adresse</b> </td>
+            <td>
+              <%= @item.name %> <br/>
+              <%= @item.street %> <br />
+              <%= @item.city %>
+            </td>
+          </tr>
+          <tr>
+            <td> <b>Bestellung</b> </td>
+            <td>
+              <pre><%= @item.order %> </pre>
+            </td>
+          </tr>
+        </table>
+
+
+         <span class="clear">&nbsp;</span>
+      </div>
+    </div>
+

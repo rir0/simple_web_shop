@@ -1,0 +1,38 @@
+
+  <% include_stylesheet 'admin/links/links' %>
+
+  <h1>Products</h1>
+
+  <p>You can enter links here, which will show up on the public side of your website.</p>
+
+  <table cellspacing="0" cellpadding="0" border="0" class="index" id="links">
+
+    <thead>
+      <tr>
+        <th class="link">Link</th>
+        <th class="modify">Modify</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% for item in @items %>
+        <tr class="node level-1">
+          <td>
+            <%= link_to(item.title, prod_edit_path(item)) %>
+          </td>
+          <td class="remove">
+            <%= link_to image('remove', :alt => 'Remove'), prod_remove_path(item) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+  <%= link_to("Add new product", prod_new_path) %>
+  <br/>
+  <%= link_to("View orders", orders_overview_path) %>
+  <br/>
+  <%= link_to("View settings", settings_path) %>
+
+

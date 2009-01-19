@@ -1,0 +1,40 @@
+
+<% include_stylesheet 'admin/simple_web_shop' %>
+
+  <% if @item.new_record? %>
+    <h1>New Product</h1>
+  <% else %>
+    <h1>Edit: <%= @item.title %></h1>
+  <% end %>
+
+
+  <% form_for :item do |form| %>
+
+    <div class="form-area">
+      <div  id="link_form_area">
+        <p class="ptitle">
+          <label for="item_title">Title</label>
+          <%= form.text_field "title", :class => 'textbox', :size => "32" %>
+        </p>
+
+        <p class="description">
+          <label for="item_description">Description</label>
+          <%= form.text_area "description", :class => 'textbox' %>
+        </p>
+
+        <p class="price">
+          <label for="item_price">Price</label>
+          <%= form.text_field "price", :class => 'textbox', :maxlength => 10 %>
+        </p>
+
+         <span class="clear">&nbsp;</span>
+      </div>
+    </div>
+
+    <p class="buttons">
+      <%= save_model_button(@item) %>
+      <%= save_model_and_continue_editing_button(@item) %>
+      or 
+      <%= link_to "Cancel", {:action => :index} %>
+    </p>
+  <% end %>

@@ -1,0 +1,44 @@
+
+<% include_stylesheet 'admin/simple_web_shop' %>
+
+  <h1>Web shop settings</h1>
+
+  <% form_tag do %>
+    <div class="form-area">
+      <div  id="link_form_area">
+        <p class="ptitle">
+          <label for="item_email">Order Email</label>
+          <%= text_field "item", "email_to", :class => 'textbox', :size => "32" %>
+        </p>
+
+        <p class="ptitle">
+          <label for="item_email">Sending Email</label>
+          <%= text_field "item", "email_from", :class => 'textbox', :size => "32" %>
+        </p>
+
+        <p class="description">
+          <label for="item_description">Shipping costs:</label>
+          <%= text_field "item", "shipping_cost", :class => 'textbox', :size => "8" %>
+        </p>
+
+        <p class="description">
+          <label for="item_description">Shipping costs limit:</label>
+          <%= text_field "item", "shipping_cost_limit", :class => 'textbox', :size => "8" %>
+        </p>
+
+        <p class="description">
+          <label for="item_description">Currency:</label>
+          <%= text_field "item", "currency", :class => 'textbox', :size => "8" %>
+        </p>
+
+         <span class="clear">&nbsp;</span>
+      </div>
+    </div>
+
+    <p class="buttons">
+      <%= save_model_button(@item) %>
+      <%= save_model_and_continue_editing_button(@item) %>
+      or 
+      <%= link_to "Cancel", {:action => :index} %>
+    </p>
+  <% end %>

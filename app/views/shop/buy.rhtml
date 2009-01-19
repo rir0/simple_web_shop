@@ -1,0 +1,75 @@
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/extensions/simple_web_shop.css" />
+
+   
+<div class="regLeft">
+  
+    <% if(!@order.errors.empty?) %>
+      <div id="error_message">        
+        <h2 class="error">Fehler </h2>
+        <p>Bitte korrigieren Sie die roten Felder.</p>
+      </div>
+    <% end %>
+
+
+
+    <% form_for :order do |form| %>
+
+    <h3>Produkte</h3>
+    <% if !@order.errors.empty? and @order.quantity == 0 %>
+      <small class="error">Bitte w&auml;hlen Sie ein Produkt aus</small>
+    <% end %>
+
+    <table>
+      <% for product in @products %>
+        <tr>
+          <td>
+            <%= h product.title %>
+          </td>
+          <td class="pad_left">
+            zu <%= h Order.printTwoDigits(product.price) %>
+          </td>
+          <td class="pad_left">
+            <%= select :prod_, product.id, Order.quantities, {:selected => @items[product.id] } %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+
+
+
+   <div id="addrDetails">
+   <h3>Lieferadresse</h3>
+   <label for="order_name" class="smallText">Name: *</label>
+   <%= form.text_field :name, :size => 26, :class => "fix"  %>
+
+   <label for="order_firstname" class="smallText">Vorname: *</label>
+   <%= form.text_field :firstname, :size => 26, :class => "fix"  %>
+
+   <label for="order_street" class="smallText">Strasse / Nr: *</label>
+   <%= form.text_field :street, :size => 26, :class => "fix"  %>
+
+   <label for="order_city" class="smallText">PLZ / Ort: *</label>
+   <%= form.text_field :city, :size => 26, :class => "fix"  %>
+
+   <label for="order_email" class="smallText">Email: *</label>
+   <%= form.text_field :email, :size => 26, :class => "fix"  %>
+
+   <label for="order_comment" class="smallText">Bemerkungen:</label>
+   <%= form.text_area :comment, :rows => 4, :cols => 25, :class => "fix"  %>
+
+   <p>* Pflichtfeld </p>
+
+   <%= submit_tag "Bestellen", :class => "submit" %>
+
+   <br/>
+
+   </div>
+<% end %>
+</div>
+
+
+
+
+    
+

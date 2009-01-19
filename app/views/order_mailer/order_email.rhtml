@@ -1,0 +1,24 @@
+Hallo
+
+folgende Produkte wurden bestellt:
+
+<%= @order.order %>
+
+
+
+Lieferadresse:
+ <%= @order.firstname %> <%= @order.name %>
+ <%= @order.street %>
+ <%= @order.city %>
+
+ <% if @order.email != nil and @order.email != "" %>
+   Email: <%= @order.email %>
+ <% end %>
+
+ <% if @order.comment != nil and @order.comment != ""  %>
+   Kommentar: 
+ <%= @order.comment %>
+ <% end %>
+
+
+

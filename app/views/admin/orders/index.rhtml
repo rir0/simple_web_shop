@@ -1,0 +1,30 @@
+
+  <% include_stylesheet 'admin/links/links' %>
+
+  <h1>Orders</h1>
+
+  <p>Following all the orders that have been placed online</p>
+
+  <table cellspacing="0" cellpadding="0" border="0" class="index" id="links">
+
+    <thead>
+      <tr>
+        <th class="link">Link</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% for item in @items %>
+        <tr class="node level-1">
+          <td>
+            <%= link_to(item.created_at.strftime('%d.%m.%Y') + ": " + item.name, orders_detail_path(item)) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+  <%= link_to("View products", prod_index_path) %>
+
+
