@@ -1,0 +1,27 @@
+
+form label {
+  padding-top: 1em;
+  display: block;
+}
+
+.error {
+  color: red;
+}
+
+form .fix {
+  border: 1px solid gray;
+  width: 215px;
+}
+
+table .pad_left {
+  padding-left: 20px;
+}
+
+form input {
+  display: block;
+}
+
+form .error-with-field input {
+  display: inline;
+}
+
