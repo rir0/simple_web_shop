@@ -20,7 +20,7 @@ placed orders.
 The products are managed via the admin interface where you can add new
 products, change prices and view placed orders.
 
-There are no config options via the admin interface nor are there any
+There are a few config options in the admin interface. There are no 
 radiant tags involved. If you want to change the layout or anything
 you need to touch the files from the extension.
 
@@ -28,7 +28,7 @@ you need to touch the files from the extension.
 == Integration into Radiant
 
 The shop uses the url /shop. To render the correct layout you need to
-create this page in the admin interface. You must the include the
+create this page in the admin interface. You must include the
 tag <shoptag> where the shop elements should be placed. 
 
 The second page you need to create is /danke. After an order has been
